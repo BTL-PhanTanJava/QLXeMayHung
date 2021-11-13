@@ -6,24 +6,25 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.util.List;
-
 import javax.swing.JFrame;
 import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
 
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
-import javax.swing.JCheckBox;
 import javax.swing.JButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JComboBox;
 
 public class Layout_TKHoaHon extends JFrame implements ActionListener, MouseListener {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JTextField txtNgayBD;
 	private JTextField txtNgayKT;
 	private JTextField txtLocKH;
@@ -31,13 +32,11 @@ public class Layout_TKHoaHon extends JFrame implements ActionListener, MouseList
 	private JTextField txtNguoiLapHD;
 	private JTable tableHoaDon;
 	private DefaultTableModel modelHoaDon;
-	private JCheckBox cbCMND;
 	private JButton btnLoc;
 	private JButton btnXoaTrang;
 	private JButton btnAllHoaDon;
-	private JCheckBox cbTen;
-	private JCheckBox cbSDT;
-	
+	private JComboBox<String> cbbLoc;
+	private String[] s= {"Tên","Số Điện Thoại","CMND"};
 	public Layout_TKHoaHon() {
 		// TODO Auto-generated constructor stub
 		setLocation(0, -17);
@@ -71,7 +70,7 @@ public class Layout_TKHoaHon extends JFrame implements ActionListener, MouseList
 
 		JLabel lblDen = new JLabel("Đến : ");
 		lblDen.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblDen.setBounds(445, 75, 45, 20);
+		lblDen.setBounds(482, 75, 45, 20);
 		getContentPane().add(lblDen);
 
 		txtNgayBD = new JTextField();
@@ -82,7 +81,7 @@ public class Layout_TKHoaHon extends JFrame implements ActionListener, MouseList
 
 		txtNgayKT = new JTextField();
 		txtNgayKT.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		txtNgayKT.setBounds(500, 75, 320, 19);
+		txtNgayKT.setBounds(596, 75, 224, 19);
 		getContentPane().add(txtNgayKT);
 		txtNgayKT.setColumns(10);
 
@@ -99,29 +98,23 @@ public class Layout_TKHoaHon extends JFrame implements ActionListener, MouseList
 
 		JLabel lblMaHD = new JLabel("Mã HD :");
 		lblMaHD.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblMaHD.setBounds(445, 120, 58, 20);
+		lblMaHD.setBounds(482, 120, 58, 20);
 		getContentPane().add(lblMaHD);
 
 		txtMaHD = new JTextField();
 		txtMaHD.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		txtMaHD.setBounds(500, 120, 320, 19);
+		txtMaHD.setBounds(596, 120, 224, 19);
 		getContentPane().add(txtMaHD);
 		txtMaHD.setColumns(10);
 
-		cbCMND = new JCheckBox("CMND/CCCD");
-		cbCMND.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		cbCMND.setBackground(Color.WHITE);
-		cbCMND.setBounds(226, 196, 99, 21);
-		getContentPane().add(cbCMND);
-
 		JLabel lblNLapHD = new JLabel("Người Lập HD :");
 		lblNLapHD.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblNLapHD.setBounds(412, 186, 91, 20);
+		lblNLapHD.setBounds(483, 164, 91, 20);
 		getContentPane().add(lblNLapHD);
 
 		txtNguoiLapHD = new JTextField();
 		txtNguoiLapHD.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		txtNguoiLapHD.setBounds(500, 186, 320, 19);
+		txtNguoiLapHD.setBounds(596, 164, 224, 19);
 		getContentPane().add(txtNguoiLapHD);
 		txtNguoiLapHD.setColumns(10);
 
@@ -141,7 +134,7 @@ public class Layout_TKHoaHon extends JFrame implements ActionListener, MouseList
 		getContentPane().add(btnAllHoaDon);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(10, 296, 966, 231);
+		scrollPane.setBounds(10, 226, 966, 301);
 		getContentPane().add(scrollPane);
 
 		String[] colHeader = { "Mã hoá đơn", "Họ KH", "Tên KH", "Số CMND", "Địa chỉ", "Tên mặt hàng", "Số lượng",
@@ -162,17 +155,12 @@ public class Layout_TKHoaHon extends JFrame implements ActionListener, MouseList
 		tableHoaDon.getColumnModel().getColumn(11).setPreferredWidth(5);
 		scrollPane.setViewportView(tableHoaDon);
 		
-		cbTen = new JCheckBox("Tên");
-		cbTen.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		cbTen.setBackground(Color.WHITE);
-		cbTen.setBounds(226, 146, 93, 21);
-		getContentPane().add(cbTen);
-		
-		cbSDT = new JCheckBox("Số Điện Thoại");
-		cbSDT.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		cbSDT.setBackground(Color.WHITE);
-		cbSDT.setBounds(226, 170, 120, 21);
-		getContentPane().add(cbSDT);
+		cbbLoc = new JComboBox(s);
+		cbbLoc.setMaximumRowCount(100);
+		cbbLoc.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		cbbLoc.setBackground(Color.WHITE);
+		cbbLoc.setBounds(315, 147, 120, 21);
+		getContentPane().add(cbbLoc);
 		btnLoc.addActionListener(this);
 		btnAllHoaDon.addActionListener(this);
 		btnXoaTrang.addActionListener(this);
@@ -215,8 +203,4 @@ public class Layout_TKHoaHon extends JFrame implements ActionListener, MouseList
 		// TODO Auto-generated method stub
 		
 	}
-	
-	
-	
-
 }
