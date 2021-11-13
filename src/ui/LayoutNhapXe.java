@@ -1,14 +1,13 @@
 package ui;
 
 import java.awt.Color;
-import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
-import javax.swing.ImageIcon;
+//import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -30,25 +29,21 @@ public class LayoutNhapXe extends JFrame implements ActionListener, MouseListene
 	private JTextField txtLoaiXe;
 	private JTextField txtDongXe;
 	private JTextField txtMauXe;
-	private JTextField txtTrangThai;
 	private JTextField txtTenSP;
 	private JTextField txtNamSanXuat;
 	private JTextField txtDungTichXiLanh;
 	private JTextField txtDungTichBinhXang;
 	private JTextField txtKichThuoc;
 	private JTextField txtTim;
-	private JTextField txtNV;
-	private JTextField txtTimSP;
-	private JTextField txtngayh;
 	private JButton btnThem;
 	private JButton btnTim;
 	private JButton btnXoa;
 	private JButton btnXoaTrang;
-	private JButton btnHome;
-	private ImageIcon IconTimKiem = new ImageIcon("Img/search.png");
-	private ImageIcon IconADD = new ImageIcon("Img/file-add.png") ;
-	private ImageIcon IconXoa = new ImageIcon("Img/trash.png");
-	private ImageIcon IconHome = new ImageIcon("Img/home.png");
+	private JButton btnSua;
+	//private ImageIcon IconTimKiem = new ImageIcon("Img/search.png");
+	//private ImageIcon IconADD = new ImageIcon("Img/file-add.png") ;
+	//private ImageIcon IconXoa = new ImageIcon("Img/trash.png");
+	//private ImageIcon IconHome = new ImageIcon("Img/home.png");
 	private JTable table_Xe;
 	private DefaultTableModel modelXe;
 	
@@ -167,7 +162,7 @@ public class LayoutNhapXe extends JFrame implements ActionListener, MouseListene
 		txtKichThuoc = new JTextField();
 		txtKichThuoc.setHorizontalAlignment(SwingConstants.LEFT);
 		txtKichThuoc.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		txtKichThuoc.setBounds(213, 266, 272, 20);
+		txtKichThuoc.setBounds(215, 266, 271, 20);
 		getContentPane().add(txtKichThuoc);
 		txtKichThuoc.setColumns(10);
 		
@@ -243,17 +238,17 @@ public class LayoutNhapXe extends JFrame implements ActionListener, MouseListene
 		
 		btnThem = new JButton("Thêm");
 		btnThem.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnThem.setBounds(590, 516, 90, 40);
+		btnThem.setBounds(543, 516, 90, 40);
 		getContentPane().add(btnThem);
 
 		btnXoa = new JButton("Xóa");
 		btnXoa.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnXoa.setBounds(713, 516, 90, 40);
+		btnXoa.setBounds(643, 516, 90, 40);
 		getContentPane().add(btnXoa);
 
 		btnXoaTrang = new JButton("Xóa Trắng");
 		btnXoaTrang.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		btnXoaTrang.setBounds(843, 516, 90, 40);
+		btnXoaTrang.setBounds(743, 516, 90, 40);
 		getContentPane().add(btnXoaTrang);
 		
 		txtTim = new JTextField();
@@ -266,6 +261,11 @@ public class LayoutNhapXe extends JFrame implements ActionListener, MouseListene
 		btnTim.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnTim.setBounds(416, 516, 90, 40);
 		getContentPane().add(btnTim);
+		
+		btnSua = new JButton("Lưu");
+		btnSua.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		btnSua.setBounds(843, 516, 90, 40);
+		getContentPane().add(btnSua);
 		btnTim.addActionListener(this);
 		btnXoaTrang.addActionListener(this);
 		btnXoa.addActionListener(this);
@@ -313,5 +313,5 @@ public class LayoutNhapXe extends JFrame implements ActionListener, MouseListene
 		// TODO Auto-generated method stub
 		
 	}
-
 }
+
