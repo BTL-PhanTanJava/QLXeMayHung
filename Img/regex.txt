@@ -1,0 +1,79 @@
+
+Tên Xe,dong xe, loaixe
+		if (!(tenXe.length() > 0 && tenXe.matches("[\\p{L}\\s\\d -]+"))) {
+			JOptionPane.showMessageDialog(this, "!!!");
+			txtTenXe.requestFocus();
+			return false;
+		}
+So Luong
+		if (soLuong.length() > 0) {
+			try {
+				int x = Integer.parseInt(soLuong);
+				if (x <= 0) {
+					JOptionPane.showMessageDialog(this, "Số lượng phải là số nguyên >=0 !!!");
+					txtSoLuong.requestFocus();
+					return false;
+				}
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(this, "Số lượng phải là số nguyên >=0 !!!");
+				txtSoLuong.requestFocus();
+				return false;
+			}
+			
+		} else {
+			JOptionPane.showMessageDialog(this, "Không để trống!!!");
+			txtSoLuong.requestFocus();
+			return false;
+		}
+dung tích bình xăng, dung tích xi lanh 
+		if (DT.length() > 0) {
+			try {
+				float x = Float.parseFloat(DT);
+				if (x <= 0) {
+					JOptionPane.showMessageDialog(this, "Phải là số thực >=0 !!!");
+					txtBTBinhXang.requestFocus();
+					return false;
+				}
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(this, "Phải là số thực >=0 !!!");
+				txtBTBinhXang.requestFocus();
+				return false;
+			}
+			
+		} else {
+			JOptionPane.showMessageDialog(this, "Không để trống!!!");
+			txtBTBinhXang.requestFocus();
+			return false;
+		}
+kích thước 
+		if (!(kichThuoc.length() > 0 && kichThuoc.matches("(\\d)+(mm x \\d+){2}(mm)"))) {
+			//Kích thước
+			JOptionPane.showMessageDialog(this, "Kích thước phải theo kiểu amm x bmm x cmm");
+			txtKichThuoc.requestFocus();
+			return false;
+		}
+giá bán,giá nhập	
+		if (!(gia.length() > 0 && gia.matches("[1-9]{1}[0-9]+"))) {
+			JOptionPane.showMessageDialog(this, "Giá phải > 0!!!");
+			txtDonGia.requestFocus();
+			return false;
+		}
+số CMND
+			if (!(CMND.length() > 0 && CMND.matches("\\d{9}")) {
+				JOptionPane.showMessageDialog(this, "Thêm thất bại, Số CMND 9 số , căn cước 12 số!!");
+				txtCMND.requestFocus();
+				return false;
+			}
+địa chỉ
+		if (!(diachi.length() > 0 && diachi.matches("[\\p{L}\\s0-9()\\/_.,+-]+"))) {
+			//địa chỉ có kiểu X/Y/Z tên đường, tên phường, tên quận, tên thành phố : 65/3 Phạm Văn Bach, Phường 12, Quận Tân Bình, tp Hồ Chính Minh 
+			JOptionPane.showMessageDialog(this, "Thêm thất bại,địa chỉ có kiểu X/Y/Z tên đường, tên phường, tên quận, tên thành phố!!");
+			textDiaChi.requestFocus();
+			return false;
+		}
+Số Đt
+		if (!(sdt.length() > 0 && sdt.matches("(0){1}\\d{9}"))) {
+			JOptionPane.showMessageDialog(this, "Thêm thất bại, Số điện thoại có 10 chữ số!!");
+			txtSDT.requestFocus();
+			return false;
+		}
