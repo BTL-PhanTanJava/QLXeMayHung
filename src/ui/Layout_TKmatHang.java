@@ -22,6 +22,7 @@ import javax.swing.table.DefaultTableModel;
 
 
 import javax.swing.JScrollPane;
+import javax.swing.JComboBox;
 
 public class Layout_TKmatHang extends JFrame implements MouseListener, ActionListener {
 	private JTextField txtMaSPTenSP;
@@ -38,8 +39,8 @@ public class Layout_TKmatHang extends JFrame implements MouseListener, ActionLis
 	private JButton btnHoanTac;
 	private ImageIcon IconTimKiem = new ImageIcon("Img/search.png");
 	private ImageIcon IconUndo = new ImageIcon("Img/undo.png");
-	private JCheckBox cbHetHang;
-	
+	private String[] s= {"Còn hàng","Hết hàng","Ngừng kinh doanh"};
+	private JComboBox<String> cbbTrangThai;
 	public Layout_TKmatHang() {
 		// TODO Auto-generated constructor stub
 		setLocation(0, -17);
@@ -74,17 +75,14 @@ public class Layout_TKmatHang extends JFrame implements MouseListener, ActionLis
 		
 		JLabel lblSoLuong = new JLabel("Số Lượng :");
 		lblSoLuong.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		lblSoLuong.setBounds(485, 81, 72, 20);
+		lblSoLuong.setBounds(425, 81, 72, 20);
 		getContentPane().add(lblSoLuong);
 		
-		JLabel lblNewLabel_2 = new JLabel("New label");
-		lblNewLabel_2.setBounds(127, 252, -3, 0);
-		getContentPane().add(lblNewLabel_2);
 		
 		JLabel lblGia = new JLabel("Giá :");
 		lblGia.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		lblGia.setBackground(Color.WHITE);
-		lblGia.setBounds(485, 156, 45, 13);
+		lblGia.setBounds(425, 156, 45, 13);
 		getContentPane().add(lblGia);
 		
 		txtMaSPTenSP = new JTextField();
@@ -95,13 +93,13 @@ public class Layout_TKmatHang extends JFrame implements MouseListener, ActionLis
 		
 		txtSoLuong = new JTextField();
 		txtSoLuong.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		txtSoLuong.setBounds(567, 82, 211, 19);
+		txtSoLuong.setBounds(507, 82, 211, 19);
 		getContentPane().add(txtSoLuong);
 		txtSoLuong.setColumns(10);
 		
 		txtGia = (JFormattedTextField) new JTextField();
 		txtGia.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		txtGia.setBounds(567, 152, 211, 19);
+		txtGia.setBounds(507, 152, 211, 19);
 		getContentPane().add(txtGia);
 		txtGia.setColumns(10);
 		
@@ -119,7 +117,7 @@ public class Layout_TKmatHang extends JFrame implements MouseListener, ActionLis
 		 cbLonHon = new JCheckBox("Lớn hơn");
 		cbLonHon.setBackground(Color.WHITE);
 		cbLonHon.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		cbLonHon.setBounds(567, 107, 78, 21);
+		cbLonHon.setBounds(507, 107, 78, 21);
 		getContentPane().add(cbLonHon);
 		
 		 cbNamSanXuat = new JCheckBox("Năm Sản Xuất");
@@ -131,7 +129,7 @@ public class Layout_TKmatHang extends JFrame implements MouseListener, ActionLis
 		 cbGia = new JCheckBox("Lớn hơn");
 		cbGia.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		cbGia.setBackground(Color.WHITE);
-		cbGia.setBounds(567, 177, 168, 30);
+		cbGia.setBounds(507, 177, 168, 30);
 		getContentPane().add(cbGia);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -169,11 +167,12 @@ public class Layout_TKmatHang extends JFrame implements MouseListener, ActionLis
 		cbLoaiXe.setBounds(128, 130, 202, 28);
 		getContentPane().add(cbLoaiXe);
 		
-		cbHetHang = new JCheckBox("Hết Hàng");
-		cbHetHang.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		cbHetHang.setBackground(Color.WHITE);
-		cbHetHang.setBounds(652, 107, 78, 21);
-		getContentPane().add(cbHetHang);
+		cbbTrangThai = new JComboBox(s);
+		cbbTrangThai.setMaximumRowCount(100);
+		cbbTrangThai.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		cbbTrangThai.setBackground(Color.WHITE);
+		cbbTrangThai.setBounds(723, 81, 100, 21);
+		getContentPane().add(cbbTrangThai);
 		btnLoc.addActionListener(this);
 		btnHoanTac.addActionListener(this);
 	}
