@@ -18,6 +18,7 @@ import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
 
 import javax.swing.JScrollPane;
+import javax.swing.JComboBox;
 
 
 public class LayoutNhapXe extends JFrame implements ActionListener, MouseListener {
@@ -40,6 +41,8 @@ public class LayoutNhapXe extends JFrame implements ActionListener, MouseListene
 	private JButton btnXoa;
 	private JButton btnXoaTrang;
 	private JButton btnSua;
+	private String[] s= {"Còn hàng","Hết hàng","Ngừng kinh doanh"};
+	private JComboBox<String> cbbTrangThai;
 	//private ImageIcon IconTimKiem = new ImageIcon("Img/search.png");
 	//private ImageIcon IconADD = new ImageIcon("Img/file-add.png") ;
 	//private ImageIcon IconXoa = new ImageIcon("Img/trash.png");
@@ -68,7 +71,7 @@ public class LayoutNhapXe extends JFrame implements ActionListener, MouseListene
 		JLabel lbltieude = new JLabel("QUẢN LÝ XE MÁY");
 		lbltieude.setHorizontalAlignment(SwingConstants.CENTER);
 		lbltieude.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lbltieude.setBounds(238, 0, 540, 55);
+		lbltieude.setBounds(215, 0, 540, 55);
 		getContentPane().add(lbltieude);
 		
 		JLabel lblmaSP = new JLabel("Mã SP :");
@@ -114,7 +117,7 @@ public class LayoutNhapXe extends JFrame implements ActionListener, MouseListene
 		txtSoLuongTon = new JTextField();
 		txtSoLuongTon.setHorizontalAlignment(SwingConstants.LEFT);
 		txtSoLuongTon.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		txtSoLuongTon.setBounds(713, 101, 220, 19);
+		txtSoLuongTon.setBounds(713, 141, 110, 19);
 		getContentPane().add(txtSoLuongTon);
 		txtSoLuongTon.setColumns(10);
 		
@@ -126,7 +129,7 @@ public class LayoutNhapXe extends JFrame implements ActionListener, MouseListene
 		txtGiaBan = new JTextField();
 		txtGiaBan.setHorizontalAlignment(SwingConstants.LEFT);
 		txtGiaBan.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		txtGiaBan.setBounds(215, 101, 270, 20);
+		txtGiaBan.setBounds(216, 181, 270, 20);
 		getContentPane().add(txtGiaBan);
 		txtGiaBan.setColumns(10);
 		
@@ -197,7 +200,7 @@ public class LayoutNhapXe extends JFrame implements ActionListener, MouseListene
 		txtLoaiXe = new JTextField();
 		txtLoaiXe.setHorizontalAlignment(SwingConstants.LEFT);
 		txtLoaiXe.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		txtLoaiXe.setBounds(215, 181, 270, 20);
+		txtLoaiXe.setBounds(215, 101, 270, 20);
 		getContentPane().add(txtLoaiXe);
 		txtLoaiXe.setColumns(10);
 		
@@ -209,7 +212,7 @@ public class LayoutNhapXe extends JFrame implements ActionListener, MouseListene
 		txtDongXe = new JTextField();
 		txtDongXe.setHorizontalAlignment(SwingConstants.LEFT);
 		txtDongXe.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		txtDongXe.setBounds(713, 141, 220, 19);
+		txtDongXe.setBounds(713, 101, 220, 19);
 		getContentPane().add(txtDongXe);
 		txtSoLuongTon.setColumns(10);
 		
@@ -266,6 +269,13 @@ public class LayoutNhapXe extends JFrame implements ActionListener, MouseListene
 		btnSua.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		btnSua.setBounds(843, 516, 90, 40);
 		getContentPane().add(btnSua);
+		
+		cbbTrangThai = new JComboBox(s);
+		cbbTrangThai.setMaximumRowCount(100);
+		cbbTrangThai.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		cbbTrangThai.setBackground(Color.WHITE);
+		cbbTrangThai.setBounds(833, 141, 100, 21);
+		getContentPane().add(cbbTrangThai);
 		btnTim.addActionListener(this);
 		btnXoaTrang.addActionListener(this);
 		btnXoa.addActionListener(this);
@@ -314,4 +324,5 @@ public class LayoutNhapXe extends JFrame implements ActionListener, MouseListene
 		
 	}
 }
+
 
